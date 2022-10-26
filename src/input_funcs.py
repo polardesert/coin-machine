@@ -24,17 +24,19 @@ def cnvt_str_int(str_val: str) -> Tuple[int, str]:
     amount = str_val.split("-")
     assert len(amount) == 2
 
-    pounds = amount[0]
-    pence = amount[1]
-    assert len(pence) <= 2
-    pounds = pounds if len(pounds) else 0
-    pence = pence if len(pence) else 0
-    assert isint(pounds) and isint(pence)
+    # major_denom is either e.g. Pounds or Dollar
+    # minor_denom is either e.g. Pence or Cents
+    major_denom = amount[0]
+    minor_denom = amount[1]
+    assert len(minor_denom) <= 2
+    major_denom = major_denom if len(major_denom) else 0
+    minor_denom = minor_denom if len(minor_denom) else 0
+    assert isint(major_denom) and isint(minor_denom)
 
-    pounds = int(pounds)
-    pence = int(pence)
+    major_denom = int(major_denom)
+    minor_denom = int(minor_denom)
 
-    return pounds * 100 + pence, ccy_symbol
+    return major_denom * 100 + minor_denom, ccy_symbol
 
 
 def isint(in_str: str) -> bool:
