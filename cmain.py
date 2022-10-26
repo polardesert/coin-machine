@@ -41,14 +41,16 @@ DOCS = __doc__
 
 
 def main_coin_calc(in_amt: str,
-                   nways_type: Optional[NWays] = NWays.ODD
+                   nways_type_str: str = NWays.ODD
                    ) -> Union[int, Dict[str, int]]:
     """
 
+    :param nways_type_str:
     :param in_amt:
-    :param nways_type:
+    :param nways_type_str:
     :return:
     """
+    nways_type = NWays(nways_type_str)  # default: ODD, EVEN, ALL
     num_ways = dispense_count(in_amt)
     if nways_type is None:
         return num_ways
@@ -71,7 +73,7 @@ def run_inter():
         if in_args.upper() not in gen_commands:
             try:
                 print(main_coin_calc(*in_args.split(chr(32))))
-            except (AssertionError, TypeError):
+            except (AssertionError, TypeError, ValueError):
                 print("Error: ",
                       "\n".join(traceback.format_exc().splitlines()[-2:]),
                       "\nPlease type 'help' for guidance.\n")

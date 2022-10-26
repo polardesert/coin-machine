@@ -13,6 +13,7 @@ alt(x) where gen_val = +1 which gives alternating sum combinations
 
 from typing import List, Dict
 from bisect import bisect
+from enum import Enum
 from src.input_funcs import cnvt_str_int
 from src.coin_gen import calc_coins
 from src.coin_denom import DENOM
@@ -21,7 +22,7 @@ __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
 
 
-class NWays(str):
+class NWays(str, Enum):
     ALL = 'ALL'
     ODD = 'ODD'
     EVEN = 'EVEN'
