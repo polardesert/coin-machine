@@ -21,10 +21,10 @@ e.g. python cmain.py £123-45 even
 e.g. python cmain.py £123-45 all
 e.g. python cmain.py £1000-
 
-NOTE's:
-* for "£1000-" elapsed time is ~15 secs on a 32GB RAM i7 2.60Ghz SSD machine
-* all upper and lower case strings are handled
-* US Dollar denominations are handled via $ symbol e.g. $123-45 (see coin_denom.py)
+NOTEs:
+- for "£1000-" elapsed time is ~15 secs on a 32GB RAM i7 2.60Ghz SSD machine
+- all upper and lower case strings are handled on the "odd", "even", "all" params
+- US Dollar denominations are handled via $ symbol e.g. $123-45 (see coin_denom.py)
 """
 
 
