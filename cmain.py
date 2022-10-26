@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"""Executions on how to run cmain.py in Anaconda Command prompt (Python 3.8):
+"""coin-machine program, by Usman Ahmad
+Executions on how to run cmain.py in Anaconda Command prompt (Python 3.x):
 
 To compute the number of odd ways to sum to £0-50, £2-, £10-, £100-
 RUN: python cmain.py
@@ -30,6 +31,7 @@ NOTEs:
 
 from typing import Optional, Union, Dict
 import sys
+import traceback
 from src.coin_machine import dispense_count, dispense_odd_count, NWays
 
 
@@ -60,8 +62,7 @@ def run_inter():
     :return:
     """
     in_args = ""
-    print("\ncoin-machine program started, by Usman Ahmad\n")
-    print("press any key to continue...")
+    print("\npress ENTER / RETURN key to continue...")
     input()
     print(DOCS)
     while not (in_args == "QUIT"):
@@ -70,8 +71,11 @@ def run_inter():
         if in_args.upper() not in gen_commands:
             try:
                 print(main_coin_calc(*in_args.split(chr(32))))
-            except (TypeError, AssertionError) as exp:
-                print(f"\nError:\n\n{exp}\n")
+            except (AssertionError, TypeError):
+                print("Error: ",
+                      "\n".join(traceback.format_exc().splitlines()[-2:]),
+                      "\nPlease type 'help' for guidance.\n")
+
         else:
             if in_args == "HELP":
                 print(DOCS)
@@ -81,8 +85,11 @@ def run_inter():
 if __name__ == "__main__":
     args = sys.argv[1:]
     if args:
-        args = [x.upper() if isinstance(x, str) else x for x in args]
-        print(main_coin_calc(*args))
+        if args[0].upper() == "HELP":
+            print(DOCS)
+        else:
+            args = [x.upper() if isinstance(x, str) else x for x in args]
+            print(main_coin_calc(*args))
     else:  # calculate number of ways for 50p, £2, £10, £100
         amounts = ["£0-50", "£2-", "£10-", "£100-"]
         print("Computing odd number of ways to sum the following amounts:")

@@ -26,6 +26,7 @@ def cnvt_str_int(str_val: str) -> Tuple[int, str]:
 
     pounds = amount[0]
     pence = amount[1]
+    assert len(pence) <= 2
     pounds = pounds if len(pounds) else 0
     pence = pence if len(pence) else 0
     assert isint(pounds) and isint(pence)
