@@ -11,7 +11,6 @@ e.g. <cmain> £123-45 even       # calculate even number of ways
 e.g. <cmain> £123-45 all        # calculate all number of ways
 e.g. <cmain> help               # show this help screen
 e.g. <cmain> quit               # exit the program
-NOTE: all upper and lower case strings are handled
 
 Generally, to compute the number of odd ways to sum £{pounds}-{pence}
 RUN: python cmain.py £{pounds}-{pence}
