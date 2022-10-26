@@ -4,7 +4,7 @@
 """
 from itertools import islice
 from typing import List
-from src.cmath import poly_series, poly_divide
+from src.coin_math import poly_series, poly_divide
 
 __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
