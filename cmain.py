@@ -3,7 +3,8 @@
 
 To compute the number of odd ways to sum to £0-50, £2-, £10-, £100-
 RUN: python cmain.py
-This will then open up an interpreter executed in the following ways:
+After calculating the number of ways for these amounts, an interpreter will be
+opened allowing the following types of executions:
 e.g. <cmain> £123-45            # calculate odd number of ways
 e.g. <cmain> £123-45 odd        # calculate odd number of ways
 e.g. <cmain> £123-45 even       # calculate even number of ways
