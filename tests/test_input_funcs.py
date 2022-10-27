@@ -7,6 +7,9 @@ import unittest
 from parameterized import parameterized
 from src.input_funcs import cnvt_str_int
 
+__author__ = "Usman Ahmad"
+__version__ = "1.0.1"
+
 
 class TestInputFuncs(unittest.TestCase):
     @parameterized.expand([
