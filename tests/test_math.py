@@ -53,6 +53,15 @@ class TestMathFuncs(unittest.TestCase):
             [
                 geometric_series(2, +1),
                 [1, -2, 4, -8, 16, -32, 64, -128, 256, -512, 1024]],
+            [
+                geometric_power_series(3, 2, -1),
+                [1, 0, 3, 0, 9, 0, 27, 0, 81, 0, 243]],
+            [
+                geometric_power_series(3, 2, +1),
+                [1, 0, -3, 0, 9, 0, -27, 0, 81, 0, -243]],
+            [
+                fibonacci_series(),
+                [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]]
         ]
     )
     def test_series(
