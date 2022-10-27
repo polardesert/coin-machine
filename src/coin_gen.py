@@ -13,14 +13,24 @@ __version__ = "1.0.1"
 def coins_gen_fun(coins: List[int], gen_val: int = -1):
     """
     Create generating function for the number of ways to sum a particular
-    amount of coins
+    amount of coins.
+
+    The generating function is a product series of geometric power series where each
+    of the exponents in the denominator are the coin denominations.
+
+    When gen_val = -1 the coefficient of the Xth term of the power series is the
+    total number of ways to sum the amount of X using the coin denominations
+
+    When gen_val = +1 the coefficient of the Xth term of the power series is the
+    alternative number of ways to sum the amount of X using the coin denominations
+
     :param coins: denomination of coins
     :param gen_val:
-                    -1 gives usual geometric type series 1 / ( 1 - a*x)
+                    -1 gives usual geometric type power series 1 / ( 1 - a*x)
                     This gives all number of ways to sum coins to the target amount
                     all(x)
 
-                    +1 gives alternating geometric series 1 / (1 + a*x)
+                    +1 gives alternating geometric type power series 1 / (1 + a*x)
                     This gives all alternating ways to sum coins to the target amount
                     alt(x)
 
