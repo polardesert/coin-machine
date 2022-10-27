@@ -7,7 +7,7 @@ import unittest
 from parameterized import parameterized
 from typing import Generator, List
 from itertools import islice
-from src.coin_math import poly_divide, poly_series
+from src.poly_math import poly_divide, poly_series
 
 __author__ = "Usman Ahmad"
 __version__ = "1.0.1"

@@ -25,11 +25,11 @@ e.g. python cmain.py £1000-
 NOTEs:
 - for "£1000-" elapsed time is ~15 secs on a 32GB RAM i7 2.60Ghz SSD machine
 - all upper and lower case strings are handled on the "odd", "even", "all" params
-- US Dollar denominations are handled via $ symbol e.g. $123-45 (see coin_denom.py)
+- US Dollar denominations are handled via $ symbol e.g. $123-45 (see denominations.py)
 """
 
 
-from typing import Optional, Union, Dict
+from typing import Union, Dict
 import sys
 import traceback
 from src.coin_machine import dispense_count, dispense_odd_count, NWays

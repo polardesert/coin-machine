@@ -4,7 +4,7 @@ Functions for converting string "£{pounds}-{pence}" to int of pounds * 100 + pe
 """
 
 from typing import Tuple
-from src.coin_denom import DENOM
+from src.denominations import DENOM
 
 __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
