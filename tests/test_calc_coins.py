@@ -11,7 +11,7 @@ from bisect import bisect
 from src.denominations import DENOM
 from src.coin_machine import NWays
 from src.coin_gen import calc_coins
-from src.coin_machine import calc_number_coins
+from src.coin_machine import calc_number_coins, dispense_odd_count
 
 __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
@@ -53,6 +53,35 @@ def calc_combo_num_coins(amount: int, coins: List[int]) -> Dict[str, int]:
 
 
 class TestCoinCalc(unittest.TestCase):
+    @parameterized.expand([["£0-", 0], ["£-0", 0], ["£0-5", 3], ["£-1", 1],
+                           ["£0-50", 225], ["£2-", 36840], ["£10-", 160667940],
+                           ["£10-", 160667940], ["£100-", 566936652323775]])
+    def test_dispense_odd_count_vs_vals(self, str_amt: str, exp_val: int):
+        """
+
+        :param str_amt:
+        :param exp_val:
+        :return:
+        """
+        self.assertEqual(dispense_odd_count(str_amt), exp_val)
+
+    @parameterized.expand([[c, sym, DENOM[sym]]
+                           for c in range(20) for sym in ("£", "$")])
+    def test_dispense_odd_count_vs_combo(
+            self, amount: int, sym: str, coins: List[int]):
+        """
+        Testing dispense_odd_count
+
+        :param amount:
+        :param sym:
+        :param coins:
+        :return:
+        """
+        # convert int amount to str e.g. 555 --> £5.55
+        str_amt = f"{sym}{amount // 100}-{amount % 100}"
+        self.assertEqual(dispense_odd_count(str_amt),
+                         calc_combo_num_coins(amount, coins)[NWays.ODD])
+
     @parameterized.expand([[c, DENOM[sym]] for c in range(20) for sym in ("£", "$")])
     def test_calc_number_coins(self, amount: int, coins: List[int]):
         """
