@@ -32,8 +32,8 @@ def poly_divide(func: Generator, poly: List[int]):
     numer = [next(func) for _ in range(len(poly) - 1)]
     numer.append(0)  # this is the location "bringing down" the next term of f goes
 
-    for term in func:
-        numer[-1] = term
+    for gen_term in func:
+        numer[-1] = gen_term
         coeff = numer[0] // poly[0]
 
         # assert all terms are integers
