@@ -1,7 +1,16 @@
 #!/usr/bin/env python
 """coin-machine program, by Usman Ahmad
-Executions on how to run cmain.py in Anaconda Command prompt (Python 3.x):
+Executions on how to run cmain.py in Anaconda Command prompt (tested in Python 3.8):
 
+First, in Anaconda Command Prompt, go to the "coin-machine" folder
+
+Now, you have 3 ways of computing the odd, even or all ways of summing £ or $
+denominations to the input target amount expressed as e.g. £{pounds}-{pence}
+
+1
+-----------------------------------------------------------------------------------
+--- Run Main Coin-Machine solutions and interpreter to run for specific amounts ---
+-----------------------------------------------------------------------------------
 To compute the number of odd ways to sum to £0-50, £2-, £10-, £100-
 RUN: python cmain.py
 After calculating the number of ways for these amounts, an interpreter will be
@@ -13,6 +22,11 @@ e.g. <cmain> £123-45 all        # calculate all number of ways
 e.g. <cmain> help               # show this help screen
 e.g. <cmain> quit               # exit the program
 
+
+2
+---------------------------------------------------
+--- Run specific amounts directly from cmain.py ---
+---------------------------------------------------
 Generally, to compute the number of odd ways to sum £{pounds}-{pence}
 RUN: python cmain.py £{pounds}-{pence}
 e.g. python cmain.py £123-45
@@ -21,6 +35,29 @@ e.g. python cmain.py £123-45 odd
 e.g. python cmain.py £123-45 even
 e.g. python cmain.py £123-45 all
 e.g. python cmain.py £1000-
+
+
+3
+-------------------------------------------------------------
+--- Run specific amounts directly from Python interpreter ---
+-------------------------------------------------------------
+In Python 3.8 interpreter, the main function to run is called dispense_odd_count
+residing in src/coin_machine.py:
+
+From coin-machine folder, run Anaconda Python 3.8
+
+Python 3.8.11 (default, Aug  6 2021, 09:57:55) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>> from src.coin_machine import dispense_odd_count
+>> dispense_odd_count("£1-00")
+2281
+
+>> dispense_odd_count("£100-00")
+566936652323775
+
+>> dispense_odd_count("$100-00")
+69973044750
+
 
 NOTEs:
 - for "£1000-" elapsed time is ~15 secs on a 32GB RAM i7 2.60Ghz SSD machine
