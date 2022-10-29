@@ -58,7 +58,8 @@ class TestCoinCalc(unittest.TestCase):
                            ["£10-", 160667940], ["£100-", 566936652323775]])
     def test_dispense_odd_count_vs_vals(self, str_amt: str, exp_val: int):
         """
-
+        Testing dispense_odd_count: Testing odd number of ways against already
+        tested amounts
         :param str_amt:
         :param exp_val:
         :return:
@@ -70,7 +71,11 @@ class TestCoinCalc(unittest.TestCase):
     def test_dispense_odd_count_vs_combo(
             self, amount: int, sym: str, coins: List[int]):
         """
-        Testing dispense_odd_count
+        Testing dispense_odd_count: Testing odd number of ways against
+        calc_combo_num_coins which, by brute force, calculates all odd combination
+        sums
+
+        Testing only the first 20 pence
 
         :param amount:
         :param sym:

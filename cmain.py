@@ -106,7 +106,7 @@ def run_inter():
     print(DOCS)
     while not (in_args == "QUIT"):
         in_args = input("<cmain> ").upper()
-        gen_commands = ["HELP", "QUIT"]
+        gen_commands = ["HELP", "QUIT", ""]
         if in_args.upper() not in gen_commands:
             try:
                 print(main_coin_calc(*in_args.split(chr(32))))
