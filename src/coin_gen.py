@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 """
-
+Functions to dynamically create generating functions that calculate the number of
+ways to sum up to a target amount using a set of coin denominations
 """
 from itertools import islice
-from typing import List
+from typing import List, Generator
 from src.poly_math import poly_series, poly_divide
 
 __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
 
 
-def coins_gen_fun(coins: List[int], gen_val: int = -1):
+def coins_gen_fun(coins: List[int], gen_val: int = -1) -> Generator:
     """
     Create generating function for the number of ways to sum a particular
     amount of coins.
@@ -53,7 +54,7 @@ def coins_gen_fun(coins: List[int], gen_val: int = -1):
         )
 
 
-def calc_coins(coins: List[int], target: int, gen_val: int):
+def calc_coins(coins: List[int], target: int, gen_val: int) -> int:
     """
     Calculate number of ways to sum coins to target amount
     gen = -1 -> all number of ways

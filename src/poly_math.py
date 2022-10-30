@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-
+Functions to create dynamically polynomial series and to perform polynomial division
 """
 from typing import List, Generator
 
@@ -8,10 +8,10 @@ __author__ = "Usman Ahmad"
 __version__ = "1.0.1"
 
 
-def poly_series(poly: List[int]):
+def poly_series(poly: List[int]) -> Generator:
     """
-    Generator function to create polynomical series
-    :param poly:
+    Generator function to return polynomial powers
+    :param poly: generator function returning the next polynomial power
     :return:
     """
     yield from poly
@@ -19,11 +19,11 @@ def poly_series(poly: List[int]):
         yield 0
 
 
-def poly_divide(func: Generator, poly: List[int]):
+def poly_divide(func: Generator, poly: List[int]) -> Generator:
     """
 
     :param func: generator of series coefficients
-    :param poly: polynomial list
+    :param poly: polynomial series function
     :return:
     """
     """f is a generator of series coefficients.  g is a polynomial."""

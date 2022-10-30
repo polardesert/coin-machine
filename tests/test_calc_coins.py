@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
-
+Test main functions which calculate the odd, even, all number of ways to sum
+coin denominations to the target amount
 """
 
 import unittest

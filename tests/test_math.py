@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
-
+Test poly_divide and poly_series functions which dynamically generates the
+geometric and geometric power series.
 """
 
 import unittest

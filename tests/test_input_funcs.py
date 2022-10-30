@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
-
+Test input functions converting string to int
+i.e. £{pounds}-{pence} --> pounds * 100 + pence
 """
 
 import unittest

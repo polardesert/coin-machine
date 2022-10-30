@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
-
+Test geometric power series generating functions based on coin denomninations.
+Calculating all and alternative number of ways.
 """
 
 import unittest
